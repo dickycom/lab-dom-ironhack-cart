@@ -45,21 +45,21 @@ Let's take a look at the provided HTML code. We have the **table tag with the id
 
 ```html
 <table id="cart">
-  <thead>
-    <tr>
-      <th>Product Name</th>
-      <th>Unit Price</th>
-      <th>Quantity</th>
-      <th>Subtotal</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="product">
-      <!-- ... -->
-    </tr>
-  </tbody>
-  <!-- ... -->
+	<thead>
+		<tr>
+			<th>Product Name</th>
+			<th>Unit Price</th>
+			<th>Quantity</th>
+			<th>Subtotal</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr class="product">
+			<!-- ... -->
+		</tr>
+	</tbody>
+	<!-- ... -->
 </table>
 ```
 
@@ -69,17 +69,17 @@ The one product we currently have in our `#cart` is placed in the `tr` with the 
 
 ```html
 <tr class="product">
-  <td class="name">
-    <span>Ironhack Rubber Duck</span>
-  </td>
-  <td class="price">$<span>25.00</span></td>
-  <td class="quantity">
-    <input type="number" value="0" min="0" placeholder="Quantity" />
-  </td>
-  <td class="subtotal">$<span>0</span></td>
-  <td class="action">
-    <button class="btn btn-remove">Remove</button>
-  </td>
+	<td class="name">
+		<span>Ironhack Rubber Duck</span>
+	</td>
+	<td class="price">$<span>25.00</span></td>
+	<td class="quantity">
+		<input type="number" value="0" min="0" placeholder="Quantity" />
+	</td>
+	<td class="subtotal">$<span>0</span></td>
+	<td class="action">
+		<button class="btn btn-remove">Remove</button>
+	</td>
 </tr>
 ```
 
@@ -93,8 +93,8 @@ Your goal is to calculate the subtotal price, but let's approach it gradually. L
 // js/index.js
 
 window.addEventListener('load', () => {
-  const calculatePricesBtn = document.getElementById('calculate');
-  calculatePricesBtn.addEventListener('click', calculateAll);
+	const calculatePricesBtn = document.getElementById('calculate');
+	calculatePricesBtn.addEventListener('click', calculateAll);
 });
 ```
 
@@ -104,16 +104,16 @@ Ok, let's move to the `calculateAll()` function. In this function, we used `quer
 
 ```js
 function calculateAll() {
-  // code in the following two lines is added just for testing purposes.
-  // it runs when only iteration 1 is completed. at later point, it can be removed.
-  const singleProduct = document.querySelector('.product');
-  updateSubtotal(singleProduct);
-  // end of test
+	// code in the following two lines is added just for testing purposes.
+	// it runs when only iteration 1 is completed. at later point, it can be removed.
+	const singleProduct = document.querySelector('.product');
+	updateSubtotal(singleProduct);
+	// end of test
 
-  // ITERATION 2
-  //...
-  // ITERATION 3
-  //...
+	// ITERATION 2
+	//...
+	// ITERATION 3
+	//...
 }
 ```
 
@@ -128,14 +128,14 @@ Let's start:
 ```js
 // js/index.js
 function updateSubtotal(product) {
-  const price = product.querySelector('.price span');
-  // ... your code goes here
+	const price = product.querySelector('.price span');
+	// ... your code goes here
 }
 ```
 
 - **Step 2**: Now, when you got the above mentioned DOM elements, your next step should be extracting the specific values from them. _Hint_: maybe `innerHTML` rings the bell? In case you are curious to find other ways to achieve the same result, you can start with checking [`textContent`](https://developer.mozilla.org/en-US/docs/Web/API/Node/textContent) and [`innerText`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/innerText) on Google. However, don't get distracted here, let this be your _additional reading_ when you complete the lab.
 
-- **Step 3**: Use the values you extracted from the above mentioned DOM elements to calculate the subtotal price. You can create a new variable, and its value will be equal to the product of these values. Ex. If a user picked 3 Ironhack Rubber Ducks, they should see that the subtotal is 75 dollars ($25 * 3 = $75).
+- **Step 3**: Use the values you extracted from the above mentioned DOM elements to calculate the subtotal price. You can create a new variable, and its value will be equal to the product of these values. Ex. If a user picked 3 Ironhack Rubber Ducks, they should see that the subtotal is 75 dollars ($25 \* 3 = $75).
 
 - **Step 4**: Now, when you are becoming DOM manipulation ninja, use your skills once again to get the DOM element that should hold the subtotal. _Hint_: it is the element with the class `subtotal`.
 
@@ -147,7 +147,7 @@ As a single argument, the function should take a **DOM node** that corresponds t
 
 ```js
 function updateSubtotal(product) {
-  // ...
+	// ...
 }
 ```
 
@@ -169,7 +169,7 @@ To start, remove or comment out the existing code inside the `calculateAll()` (t
 
 ```js
 function calculateAll() {
-  // ...
+	// ...
 }
 ```
 
@@ -213,10 +213,10 @@ Uncomment the `tfoot` element and its children from the `index.html` file:
 
 ```html
 <table>
-  <tbody>
-    <!-- ... -->
-  </tbody>
-  <!-- <tfoot>
+	<tbody>
+		<!-- ... -->
+	</tbody>
+	<!-- <tfoot>
     <tr class="create-product">
       <td>
         <input type="text" placeholder="Product Name" />
